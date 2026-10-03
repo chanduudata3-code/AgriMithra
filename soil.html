@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Soil Guide | AgriMitra</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Soil page specific styles -->
+    <style>
+
+        /* =========================================
+           SOIL PAGE HEADER
+        ========================================= */
+
+        .soil-page-header {
+            padding: 75px 8% 65px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #eef8ef,
+                    #fbfdfb
+                );
+        }
+
+        .soil-page-header h1 {
+            font-size: 46px;
+
+            margin-bottom: 10px;
+        }
+
+        .soil-page-header p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #68776c;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================================
+           SOIL INTRODUCTION
+        ========================================= */
+
+        .soil-introduction {
+
+            max-width: 1050px;
+
+            margin: 60px auto 40px;
+
+            padding: 0 6%;
+
+            text-align: center;
+        }
+
+        .soil-introduction h2 {
+
+            font-size: 31px;
+
+            margin-bottom: 10px;
+        }
+
+        .soil-introduction p {
+
+            max-width: 720px;
+
+            margin: auto;
+
+            color: #6c786f;
+        }
+
+
+        /* =========================================
+           SOIL CARDS
+        ========================================= */
+
+        .soil-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 20px 6% 80px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .soil-card {
+
+            background: white;
+
+            border: 1px solid #e0e9e2;
+
+            border-radius: 17px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 8px 30px
+                rgba(30, 75, 42, 0.05);
+
+            transition: 0.25s;
+        }
+
+
+        .soil-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                #a5cdae;
+
+            box-shadow:
+                0 15px 35px
+                rgba(30, 75, 42, 0.09);
+        }
+
+
+        /* =========================================
+           SOIL CARD HEADER
+        ========================================= */
+
+        .soil-card-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .soil-icon {
+
+            width: 65px;
+            height: 65px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: #eef6ef;
+
+            font-size: 34px;
+        }
+
+
+        .soil-card-header span {
+
+            color: #198f4d;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.2px;
+        }
+
+
+        .soil-card-header h2 {
+
+            font-size: 24px;
+
+            line-height: 1.2;
+        }
+
+
+        .soil-description {
+
+            color: #68756c;
+
+            font-size: 14px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =========================================
+           SOIL PROPERTIES
+        ========================================= */
+
+        .soil-properties {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 10px;
+
+            margin-bottom: 23px;
+        }
+
+
+        .soil-property {
+
+            padding: 13px;
+
+            border-radius: 9px;
+
+            background: #f6faf7;
+        }
+
+
+        .soil-property span {
+
+            display: block;
+
+            color: #7a867d;
+
+            font-size: 11px;
+
+            margin-bottom: 3px;
+        }
+
+
+        .soil-property strong {
+
+            color: #293b2f;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           SUITABLE CROPS
+        ========================================= */
+
+        .suitable-crops {
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid #e6ece7;
+        }
+
+
+        .suitable-crops h3 {
+
+            font-size: 14px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .soil-crop-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .soil-crop-tag {
+
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+            background: #e9f6ec;
+
+            color: #176b3a;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           SOIL NOTE
+        ========================================= */
+
+        .soil-note {
+
+            max-width: 970px;
+
+            margin: 0 auto 80px;
+
+            padding: 28px 32px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            border-radius: 14px;
+
+            background: #fffaf0;
+
+            border: 1px solid #eee2bd;
+        }
+
+
+        .soil-note-icon {
+
+            width: 45px;
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #fff1c9;
+
+            font-size: 23px;
+        }
+
+
+        .soil-note h3 {
+
+            margin-bottom: 4px;
+
+            font-size: 16px;
+        }
+
+
+        .soil-note p {
+
+            color: #756e5b;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           CROP-SOIL MATCH
+        ========================================= */
+
+        .soil-match-section {
+
+            padding: 75px 8%;
+
+            background: #edf6ef;
+        }
+
+
+        .soil-match-container {
+
+            max-width: 1050px;
+
+            margin: auto;
+        }
+
+
+        .soil-match-heading {
+
+            text-align: center;
+
+            max-width: 650px;
+
+            margin: 0 auto 40px;
+        }
+
+
+        .soil-match-heading span {
+
+            color: #198f4d;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.3px;
+        }
+
+
+        .soil-match-heading h2 {
+
+            font-size: 32px;
+
+            margin: 5px 0 8px;
+        }
+
+
+        .soil-match-heading p {
+
+            color: #6a786e;
+        }
+
+
+        .soil-match-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .soil-match-card {
+
+            background: white;
+
+            border-radius: 13px;
+
+            padding: 25px 18px;
+
+            text-align: center;
+
+            border:
+                1px solid #dfe9e1;
+        }
+
+
+        .soil-match-card > span {
+
+            display: block;
+
+            font-size: 38px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .soil-match-card h3 {
+
+            margin-bottom: 8px;
+        }
+
+
+        .soil-match-card p {
+
+            color: #6d796f;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .soil-page-cta {
+
+            max-width: 1000px;
+
+            margin: 80px auto;
+
+            padding: 42px;
+
+            border-radius: 18px;
+
+            background: #176b3a;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        .soil-page-cta span {
+
+            color: #bfe4ca;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+        }
+
+
+        .soil-page-cta h2 {
+
+            font-size: 28px;
+
+            margin: 5px 0;
+        }
+
+
+        .soil-page-cta p {
+
+            color: #d3e9d9;
+        }
+
+
+        .soil-page-cta a {
+
+            flex-shrink: 0;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            background: white;
+
+            color: #176b3a;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .soil-match-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .soil-page-header {
+
+                padding:
+                    55px 6% 50px;
+            }
+
+
+            .soil-page-header h1 {
+
+                font-size: 35px;
+            }
+
+
+            .soil-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                padding-left: 5%;
+
+                padding-right: 5%;
+            }
+
+
+            .soil-card {
+
+                padding: 23px;
+            }
+
+
+            .soil-properties {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .soil-note {
+
+                margin-left: 5%;
+
+                margin-right: 5%;
+
+                padding: 22px;
+            }
+
+
+            .soil-match-section {
+
+                padding:
+                    60px 6%;
+            }
+
+
+            .soil-match-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .soil-page-cta {
+
+                margin:
+                    60px 6%;
+
+                padding:
+                    30px 24px;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+            }
+
+
+            .soil-page-cta a {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌱 AgriMitra
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="crops.html">
+            Crops
+        </a>
+
+        <a href="soil.html"
+           class="active">
+            Soil Guide
+        </a>
+
+        <a href="disease.html">
+            Disease Detection
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<section class="soil-page-header">
+
+    <span class="hero-tag">
+        SOIL GUIDE
+    </span>
+
+    <h1>
+        Understand Your Soil
+    </h1>
+
+    <p>
+        Learn about common agricultural soil types,
+        their basic properties and suitable crops.
+    </p>
+
+</section>
+
+
+
+<!-- =========================================
+     INTRODUCTION
+========================================= -->
+
+<section class="soil-introduction">
+
+    <h2>
+        Soil plays a major role in crop growth
+    </h2>
+
+    <p>
+        Different crops perform better under different
+        soil conditions. Explore the common soil types
+        below and understand their basic characteristics.
+    </p>
+
+</section>
+
+
+
+<!-- =========================================
+     SOIL TYPES
+========================================= -->
+
+<section class="soil-grid">
+
+
+    <!-- ALLUVIAL SOIL -->
+
+    <article class="soil-card">
+
+        <div class="soil-card-header">
+
+            <div class="soil-icon">
+                🟤
+            </div>
+
+            <div>
+
+                <span>
+                    SOIL TYPE 01
+                </span>
+
+                <h2>
+                    Alluvial Soil
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="soil-description">
+
+            Alluvial soil is commonly found in river
+            plains and is generally fertile. Its texture
+            can range from sandy loam to clay depending
+            on the location.
+
+        </p>
+
+
+        <div class="soil-properties">
+
+
+            <div class="soil-property">
+
+                <span>
+                    Texture
+                </span>
+
+                <strong>
+                    Sandy Loam – Clay
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Fertility
+                </span>
+
+                <strong>
+                    Generally High
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Drainage
+                </span>
+
+                <strong>
+                    Moderate
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Water Holding
+                </span>
+
+                <strong>
+                    Moderate – High
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="suitable-crops">
+
+            <h3>
+                Suitable AgriMitra Crops
+            </h3>
+
+            <div class="soil-crop-tags">
+
+                <span class="soil-crop-tag">
+                    🌾 Rice
+                </span>
+
+                <span class="soil-crop-tag">
+                    🌽 Maize
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- BLACK SOIL -->
+
+    <article class="soil-card">
+
+        <div class="soil-card-header">
+
+            <div class="soil-icon">
+                ⚫
+            </div>
+
+            <div>
+
+                <span>
+                    SOIL TYPE 02
+                </span>
+
+                <h2>
+                    Black Soil
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="soil-description">
+
+            Black soil is known for its high clay content
+            and moisture-retaining ability. It is strongly
+            associated with cotton cultivation in India.
+
+        </p>
+
+
+        <div class="soil-properties">
+
+
+            <div class="soil-property">
+
+                <span>
+                    Texture
+                </span>
+
+                <strong>
+                    Clayey
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Fertility
+                </span>
+
+                <strong>
+                    Moderate – High
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Drainage
+                </span>
+
+                <strong>
+                    Slow
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Water Holding
+                </span>
+
+                <strong>
+                    High
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="suitable-crops">
+
+            <h3>
+                Suitable AgriMitra Crops
+            </h3>
+
+            <div class="soil-crop-tags">
+
+                <span class="soil-crop-tag">
+                    🌿 Cotton
+                </span>
+
+                <span class="soil-crop-tag">
+                    🌾 Jowar
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- RED SOIL -->
+
+    <article class="soil-card">
+
+        <div class="soil-card-header">
+
+            <div class="soil-icon">
+                🟠
+            </div>
+
+            <div>
+
+                <span>
+                    SOIL TYPE 03
+                </span>
+
+                <h2>
+                    Red Soil
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="soil-description">
+
+            Red soil gets its characteristic colour
+            largely from iron compounds. Its fertility
+            and texture vary considerably across regions.
+
+        </p>
+
+
+        <div class="soil-properties">
+
+
+            <div class="soil-property">
+
+                <span>
+                    Texture
+                </span>
+
+                <strong>
+                    Sandy – Loamy
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Fertility
+                </span>
+
+                <strong>
+                    Low – Moderate
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Drainage
+                </span>
+
+                <strong>
+                    Good
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Water Holding
+                </span>
+
+                <strong>
+                    Low – Moderate
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="suitable-crops">
+
+            <h3>
+                Suitable AgriMitra Crops
+            </h3>
+
+            <div class="soil-crop-tags">
+
+                <span class="soil-crop-tag">
+                    🌽 Maize
+                </span>
+
+                <span class="soil-crop-tag">
+                    🌾 Jowar
+                </span>
+
+                <span class="soil-crop-tag">
+                    🌿 Cotton
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- LATERITE SOIL -->
+
+    <article class="soil-card">
+
+        <div class="soil-card-header">
+
+            <div class="soil-icon">
+                🟫
+            </div>
+
+            <div>
+
+                <span>
+                    SOIL TYPE 04
+                </span>
+
+                <h2>
+                    Laterite Soil
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="soil-description">
+
+            Laterite soils develop under conditions of
+            high temperature and rainfall. Heavy leaching
+            can reduce their natural nutrient content.
+
+        </p>
+
+
+        <div class="soil-properties">
+
+
+            <div class="soil-property">
+
+                <span>
+                    Texture
+                </span>
+
+                <strong>
+                    Gravelly – Loamy
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Fertility
+                </span>
+
+                <strong>
+                    Generally Low
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Drainage
+                </span>
+
+                <strong>
+                    Good
+                </strong>
+
+            </div>
+
+
+            <div class="soil-property">
+
+                <span>
+                    Water Holding
+                </span>
+
+                <strong>
+                    Low – Moderate
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="suitable-crops">
+
+            <h3>
+                Suitability
+            </h3>
+
+            <div class="soil-crop-tags">
+
+                <span class="soil-crop-tag">
+                    Depends on management
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+</section>
+
+
+
+<!-- =========================================
+     IMPORTANT NOTE
+========================================= -->
+
+<section class="soil-note">
+
+    <div class="soil-note-icon">
+        💡
+    </div>
+
+
+    <div>
+
+        <h3>
+            Soil type alone is not enough
+        </h3>
+
+        <p>
+            Crop suitability also depends on soil pH,
+            nutrients, drainage, climate, rainfall,
+            irrigation and local conditions. A soil test
+            provides more reliable information before
+            making fertilizer or crop-management decisions.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     OUR CROPS + SOIL
+========================================= -->
+
+<section class="soil-match-section">
+
+    <div class="soil-match-container">
+
+
+        <div class="soil-match-heading">
+
+            <span>
+                CROP & SOIL
+            </span>
+
+            <h2>
+                Quick crop soil guide
+            </h2>
+
+            <p>
+                General soil preferences for the four
+                crops supported by AgriMitra.
+            </p>
+
+        </div>
+
+
+
+        <div class="soil-match-grid">
+
+
+            <div class="soil-match-card">
+
+                <span>
+                    🌾
+                </span>
+
+                <h3>
+                    Rice
+                </h3>
+
+                <p>
+                    Clay and clay-loam soils with
+                    good moisture retention.
+                </p>
+
+            </div>
+
+
+
+            <div class="soil-match-card">
+
+                <span>
+                    🌿
+                </span>
+
+                <h3>
+                    Cotton
+                </h3>
+
+                <p>
+                    Deep black soils and suitable
+                    well-drained loamy soils.
+                </p>
+
+            </div>
+
+
+
+            <div class="soil-match-card">
+
+                <span>
+                    🌽
+                </span>
+
+                <h3>
+                    Maize
+                </h3>
+
+                <p>
+                    Fertile, well-drained loamy
+                    soils are generally suitable.
+                </p>
+
+            </div>
+
+
+
+            <div class="soil-match-card">
+
+                <span>
+                    🌾
+                </span>
+
+                <h3>
+                    Jowar
+                </h3>
+
+                <p>
+                    Well-drained loamy and black
+                    soils can support good growth.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="soil-page-cta">
+
+    <div>
+
+        <span>
+            NEXT STEP
+        </span>
+
+        <h2>
+            Check your crop health
+        </h2>
+
+        <p>
+            Upload a crop leaf image to AgriMitra's
+            disease-detection system.
+        </p>
+
+    </div>
+
+
+    <a href="disease.html">
+        Detect Disease →
+    </a>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        🌱 AgriMitra
+    </div>
+
+    <p>
+        Smart Farming Assistant
+    </p>
+
+    <p class="copyright">
+        © 2026 AgriMitra
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

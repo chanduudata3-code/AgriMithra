@@ -1,0 +1,36 @@
+# Python environments and generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Keep dataset folders, but do not commit training data
+datasets/**
+!datasets/**/
+!datasets/**/.gitkeep
+
+# Local uploads and deployment cache
+uploads/
+.netlify/

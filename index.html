@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriMitra | Smart Farming Assistant</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            🌱 AgriMitra
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="crops.html">Crops</a>
+            <a href="soil.html">Soil Guide</a>
+            <a href="disease.html">Disease Detection</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                Smart Farming Assistant
+            </span>
+
+            <h1>
+                Smarter Farming.<br>
+                <span>Healthier Crops.</span>
+            </h1>
+
+            <p>
+                AgriMitra helps farmers understand crops, soil conditions
+                and identify crop diseases using machine learning.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#crop-selection" class="primary-btn">
+                    Select Your Crop
+                </a>
+
+                <a href="crops.html" class="secondary-btn">
+                    Explore Crops
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="plant-icon">
+                🌾
+            </div>
+
+            <h2>Crop Health Assistant</h2>
+
+            <p>
+                Choose your crop and upload a leaf image to detect
+                possible diseases.
+            </p>
+
+            <div class="supported">
+                <span>🌾 Rice</span>
+                <span>🌿 Cotton</span>
+                <span>🌽 Maize</span>
+                <span>🌾 Jowar</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CROP SELECTION -->
+    <section class="crop-selection-section" id="crop-selection">
+
+        <div class="section-heading">
+
+            <span>SELECT YOUR CROP</span>
+
+            <h2>What are you growing?</h2>
+
+            <p>
+                Select a crop to access crop-specific information
+                and disease detection.
+            </p>
+
+        </div>
+
+
+        <div class="select-crop-grid">
+
+            <button
+                class="select-crop-card"
+                data-crop="Rice"
+                onclick="selectCrop('Rice')"
+            >
+                <div class="crop-emoji">🌾</div>
+
+                <h3>Rice</h3>
+
+                <p>Oryza sativa</p>
+
+                <span class="select-text">
+                    Select Rice
+                </span>
+            </button>
+
+
+            <button
+                class="select-crop-card"
+                data-crop="Cotton"
+                onclick="selectCrop('Cotton')"
+            >
+                <div class="crop-emoji">🌿</div>
+
+                <h3>Cotton</h3>
+
+                <p>Gossypium</p>
+
+                <span class="select-text">
+                    Select Cotton
+                </span>
+            </button>
+
+
+            <button
+                class="select-crop-card"
+                data-crop="Maize"
+                onclick="selectCrop('Maize')"
+            >
+                <div class="crop-emoji">🌽</div>
+
+                <h3>Maize</h3>
+
+                <p>Zea mays</p>
+
+                <span class="select-text">
+                    Select Maize
+                </span>
+            </button>
+
+
+            <button
+                class="select-crop-card"
+                data-crop="Jowar"
+                onclick="selectCrop('Jowar')"
+            >
+                <div class="crop-emoji">🌾</div>
+
+                <h3>Jowar</h3>
+
+                <p>Sorghum bicolor</p>
+
+                <span class="select-text">
+                    Select Jowar
+                </span>
+            </button>
+
+        </div>
+
+
+        <!-- SELECTED CROP RESULT -->
+        <div class="selected-crop-box" id="selectedCropBox">
+
+            <div>
+                <span class="selected-label">
+                    SELECTED CROP
+                </span>
+
+                <h3 id="selectedCropName">
+                    No crop selected
+                </h3>
+            </div>
+
+
+            <button
+                id="continueButton"
+                class="continue-btn"
+                onclick="continueToDisease()"
+                disabled
+            >
+                Continue to Disease Detection →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features-section">
+
+        <div class="section-heading">
+
+            <span>OUR FEATURES</span>
+
+            <h2>
+                Everything you need for smarter farming
+            </h2>
+
+            <p>
+                Simple tools designed to provide agricultural
+                information and crop-health assistance.
+            </p>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔬
+                </div>
+
+                <h3>Disease Detection</h3>
+
+                <p>
+                    Upload a leaf image and use our machine-learning
+                    model to identify possible crop diseases.
+                </p>
+
+                <a href="#crop-selection">
+                    Select Crop →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🌾
+                </div>
+
+                <h3>Crop Guide</h3>
+
+                <p>
+                    Learn about growing conditions, seasons and
+                    requirements for commonly cultivated crops.
+                </p>
+
+                <a href="crops.html">
+                    Explore Crops →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🌱
+                </div>
+
+                <h3>Soil Guide</h3>
+
+                <p>
+                    Understand different soil types and discover
+                    which crops are suitable for each soil.
+                </p>
+
+                <a href="soil.html">
+                    Explore Soil →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+
+        <div class="section-heading">
+
+            <span>HOW IT WORKS</span>
+
+            <h2>
+                Crop disease detection in three steps
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>Select Crop</h3>
+
+                <p>
+                    Choose Rice, Cotton, Maize or Jowar.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>Upload Leaf</h3>
+
+                <p>
+                    Upload a clear image of the affected crop leaf.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>Get Result</h3>
+
+                <p>
+                    Our ML model predicts the disease and confidence.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>
+            Worried about your crop?
+        </h2>
+
+        <p>
+            Select your crop and upload a leaf image
+            to check for possible diseases.
+        </p>
+
+        <a href="#crop-selection" class="cta-btn">
+            Select Crop
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            🌱 AgriMitra
+        </div>
+
+        <p>
+            Smart Farming Assistant
+        </p>
+
+        <p class="copyright">
+            © 2026 AgriMitra
+        </p>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
