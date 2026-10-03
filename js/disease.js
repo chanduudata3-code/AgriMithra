@@ -10,9 +10,7 @@ let selectedImage = null;
 // BACKEND URL
 // ==========================================
 
-const API_URL =
-    "http://127.0.0.1:8000/predict";
-
+const API_URL = "https://agrimithra-1.onrender.com/predict";
 
 // ==========================================
 // PAGE LOAD
